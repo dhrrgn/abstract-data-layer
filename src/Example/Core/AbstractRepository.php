@@ -1,5 +1,7 @@
 <?php namespace Example\Core;
 
+use Aura\Sql\Connection\AbstractConnection;
+
 abstract class AbstractRepository {
 
 	abstract protected function getTableName();
@@ -7,7 +9,7 @@ abstract class AbstractRepository {
 
 	protected $dbh = null;
 
-	public function __construct($dbh) {
+	public function __construct(AbstractConnection $dbh) {
 		$this->dbh = $dbh;
 	}
 
