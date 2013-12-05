@@ -17,7 +17,6 @@ $connection = $connectionFactory->newInstance('mysql', [
 	'port' => '3306',
 	'dbname' => 'foo',
 ], 'foo', 'bar');
-$connection->connect();
 
 $users = new Example\User\UserRepository($connection);
 var_dump($users->getById(1));
